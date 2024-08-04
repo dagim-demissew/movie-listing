@@ -12,6 +12,15 @@ const MoviesList = () => {
     console.log(newList);
     setMovies(newList);
   };
+  const handleToggle = (movie) => {
+    const index = movies.findIndex((m) => m._id === movie._id);
+    if (index !== -1) {
+      const newList = movies.map((m, i) =>
+        i === index ? { ...m, isLiked: !m.isLiked } : m
+      );
+      setMovies(newList);
+    }
+  };
 
   return (
     <div style={{ margin: 50 }}>
@@ -36,6 +45,14 @@ const MoviesList = () => {
                 <td>{movie.genre.name}</td>
                 <td>{movie.numberInStock}</td>
                 <td>{movie.dailyRentalRate}</td>
+                <td>
+                  <i
+                    onClick={() => handleToggle(movie)}
+                    style={{ cursor: "pointer" }}
+                    class={movie.isLiked ? `fa fa-heart` : `fa fa-heart-o`}
+                    aria-hidden="true"
+                  />
+                </td>
                 <td>
                   <button
                     onClick={() => deleteMovie(movie)}
