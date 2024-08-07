@@ -17,3 +17,11 @@ code {
     background-color: rgba(154, 152, 152, 0.087);
   }
 }
+.errorPage{
+  padding: 20px;
+}
+
+.errorPage-title{
+  color: rgb(188, 0, 0);
+  font-weight:bold;
+}

@@ -62,7 +62,7 @@ const MoviesList = () => {
 
   return (
     <div className="row">
-      <div className="col-2" style={{ alignContent: "center" }}>
+      <div className="col-2" style={{ paddingTop: "70px" }}>
         <Genre
           items={genres}
           onChangeGenre={handleChangeGenre}
