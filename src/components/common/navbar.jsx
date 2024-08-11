@@ -4,34 +4,44 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = (props) => {
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <Link class="navbar-brand">HBO</Link>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <Link className="navbar-brand">HBO</Link>
       <button
-        class="navbar-toggler"
+        className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item ">
-            <Link class="nav-link" to={`/movies`}>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item ">
+            <Link className="nav-link" to={`/movies`}>
               Movies
             </Link>
           </li>
-          <li class="nav-item">
-            <Link class="nav-link" to={`/customers`}>
+          <li className="nav-item">
+            <Link className="nav-link" to={`/customers`}>
               Customers
             </Link>
           </li>
-          <li class="nav-item">
-            <Link class="nav-link" to={`/rentals`}>
+          <li className="nav-item">
+            <Link className="nav-link" to={`/rentals`}>
               Rentals
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to={`/login`}>
+              Login
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to={`/registration`}>
+              Registration
             </Link>
           </li>
         </ul>

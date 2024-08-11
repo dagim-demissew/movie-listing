@@ -81,18 +81,19 @@ export function getMovies() {
 }
 
 export function getMovie(id) {
-  return movies.find((m) => m._id === id);
+  const movie = movies.find((m) => m._id === id);
+  return movie;
 }
 
 export function saveMovie(movie) {
   let movieInDb = movies.find((m) => m._id === movie._id) || {};
-  movieInDb.name = movie.name;
-  movieInDb.genre = genresAPI.genres.find((g) => g._id === movie.genreId);
+  movieInDb.title = movie.title;
+  movieInDb.genre = genresAPI.genres.find((g) => g.name === movie.genre.name);
   movieInDb.numberInStock = movie.numberInStock;
-  movieInDb.dailyRentalRate = movie.dailyRentalRate;
+  movieInDb.dailyRentalRate = movie.rate;
 
   if (!movieInDb._id) {
-    movieInDb._id = Date.now();
+    movieInDb._id = String(Date.now());
     movies.push(movieInDb);
   }
 
